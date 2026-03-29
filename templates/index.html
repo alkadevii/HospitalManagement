@@ -1,6 +1,99 @@
-<h1>Hospital Management System</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System</title>
 
-<a href="/add_patient">Add Patient</a><br>
-<a href="/patients">View Patients</a><br>
-<a href="/add_doctor">Add Doctor</a><br>
-<a href="/add_appointment">Book Appointment</a>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🏥 Hospital Management System</h1>
+
+<div class="container">
+
+    <a href="/add_patient" class="card">
+        <div class="icon"><i class="fas fa-user-plus"></i></div>
+        <h3>Add Patient</h3>
+        <p>Register new patient details</p>
+    </a>
+
+    <a href="/patients" class="card">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h3>View Patients</h3>
+        <p>See all patient records</p>
+    </a>
+
+    <a href="/add_doctor" class="card">
+        <div class="icon"><i class="fas fa-user-md"></i></div>
+        <h3>Add Doctor</h3>
+        <p>Manage doctor information</p>
+    </a>
+
+    <a href="/add_appointment" class="card">
+        <div class="icon"><i class="fas fa-calendar-check"></i></div>
+        <h3>Book Appointment</h3>
+        <p>Schedule patient visits</p>
+    </a>
+
+</div>
+
+</body>
+</html>

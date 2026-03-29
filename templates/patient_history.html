@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Patients List</title>
+    <title>Patient History</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -15,10 +15,9 @@
         h2 {
             text-align: center;
             color: #2c3e50;
-            margin-bottom: 20px;
         }
 
-        .table-container {
+        .card {
             max-width: 900px;
             margin: auto;
             background: white;
@@ -29,14 +28,14 @@
 
         table {
             width: 100%;
+            margin-top: 20px;
             border-collapse: collapse;
         }
 
         th {
             background: #3498db;
             color: white;
-            padding: 12px;
-            text-align: left;
+            padding: 10px;
         }
 
         td {
@@ -48,72 +47,57 @@
             background: #f1f9ff;
         }
 
-        /* 🔥 History Button */
-        .history-btn {
-            padding: 6px 12px;
-            background: #2ecc71;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 13px;
-            transition: 0.3s;
-        }
-
-        .history-btn:hover {
-            background: #27ae60;
-        }
-
         .back-btn {
             display: block;
-            width: 120px;
-            margin: 20px auto 0;
+            width: 150px;
+            margin: 20px auto;
             text-align: center;
             padding: 10px;
             background: #95a5a6;
             color: white;
             border-radius: 8px;
             text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .back-btn:hover {
-            background: #7f8c8d;
         }
     </style>
 </head>
 
 <body>
 
-<h2>Patients List</h2>
+<div class="card">
 
-<div class="table-container">
+    <h2>Patient History</h2>
+
+    <p><strong>Name:</strong> {{ patient.name }}</p>
+    <p><strong>Age:</strong> {{ patient.age }}</p>
+    <p><strong>Gender:</strong> {{ patient.gender }}</p>
+
+    <h3>Appointments</h3>
+
     <table>
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>History</th> <!-- 🔥 New Column -->
+            <th>Doctor</th>
+            <th>Specialization</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
         </tr>
 
-        {% for p in patients %}
+        {% for a in appointments %}
         <tr>
             <td>{{ loop.index }}</td>
-            <td>{{ p.name }}</td>
-            <td>{{ p.age }}</td>
-            <td>{{ p.gender }}</td>
-            <td>
-                <a href="/patient_history/{{ p._id }}" class="history-btn">
-                    View
-                </a>
-            </td>
+            <td>{{ a.doctor_name }}</td>
+            <td>{{ a.specialization }}</td>
+            <td>{{ a.date }}</td>
+            <td>{{ a.time }}</td>
+            <td>{{ a.status }}</td>
         </tr>
         {% endfor %}
-
     </table>
+
 </div>
 
-<a href="/" class="back-btn">Home</a>
+<a href="/patients" class="back-btn">Back to Patients</a>
 
 </body>
 </html>
