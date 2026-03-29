@@ -1,0 +1,16 @@
+<h2>Patients</h2>
+<table border="1">
+<tr>
+<th>ID</th><th>Name</th><th>Age</th><th>Gender</th>
+</tr>
+
+{% for p in patients %}
+<tr>
+<td>{{ p._id }}</td>
+<td>{{ p.name }}</td>
+<td>{{ p.age }}</td>
+<td>{{ p.gender }}</td>
+</tr>
+{% endfor %}
+
+</table>
